@@ -85,6 +85,9 @@ spec:
           envFrom:
             - secretRef:
                 name: postgres-secrets
+      imagePullSecrets:
+        - name: idmodregcred3
+
 ---
 apiVersion: batch/v1
 kind: Job
@@ -120,4 +123,6 @@ spec:
           envFrom:
             - secretRef:
                 name: postgres-secrets
+      imagePullSecrets:
+        - name: idmodregcred3
 ---

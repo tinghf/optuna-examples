@@ -22,6 +22,9 @@ function run {
   kubectl apply -f k8s-manifests.yaml
 }
 
-IsMinikube=$1
-IMAGE_NAME=$2
+# IsMinikube=$1
+# IMAGE_NAME=$2
+IsMinikube=${1:False}
+IMAGE_NAME=${2:-idm-docker-staging.packages.idmod.org/tting/simple_optuna_sklearn_distributed:latest}
+
 run ${IsMinikube} ${IMAGE_NAME}
